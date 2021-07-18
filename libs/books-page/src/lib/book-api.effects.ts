@@ -7,4 +7,15 @@ import { BooksPageActions, BooksApiActions } from '@book-co/books-page/actions';
 @Injectable()
 export class BooksApiEffects {
   constructor(private booksService: BooksService, private actions$: Actions) {}
+
+  loadBooks$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(BooksPageActions.enter),
+      mergeMap(() =>
+        this.booksService
+          .all()
+          .pipe(map((books) => BooksApiActions.booksLoaded({ books })))
+      )
+    )
+  );
 }

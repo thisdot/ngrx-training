@@ -1,0 +1,27 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2017", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "strict": true,
+    "paths": {
+      "@book-co/books-page": ["libs/books-page/src/index.ts"],
+      "@book-co/books-page/actions": ["libs/books-page/actions/src/index.ts"],
+      "@book-co/shared-models": ["libs/shared-models/src/index.ts"],
+      "@book-co/shared-services": ["libs/shared-services/src/index.ts"],
+      "@book-co/shared-state-books": ["libs/shared-state-books/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

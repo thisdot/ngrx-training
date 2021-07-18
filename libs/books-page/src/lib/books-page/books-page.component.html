@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="col-50">
+    <bco-books-total [total]="total"> </bco-books-total>
+
+    <bco-books-list
+      [books]="books"
+      (select)="onSelect($event)"
+      (delete)="onDelete($event)"
+    >
+    </bco-books-list>
+  </div>
+
+  <bco-book-detail
+    class="col-50"
+    [book]="currentBook"
+    (save)="onSave($event)"
+    (cancel)="onCancel()"
+  >
+  </bco-book-detail>
+</div>

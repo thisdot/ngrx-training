@@ -1,0 +1,39 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h1>
+        <span *ngIf="originalBook?.id; else prompt"
+          >Editing {{ originalBook?.name }}</span
+        >
+        <ng-template #prompt>Create Book</ng-template>
+      </h1>
+    </mat-card-title>
+  </mat-card-header>
+  <form [formGroup]="bookForm" #f="ngForm" (submit)="onSubmit(f.value)">
+    <mat-card-content>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Name" formControlName="name" type="text" />
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input
+          matInput
+          placeholder="Earnings"
+          formControlName="earnings"
+          type="text"
+        />
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input
+          matInput
+          placeholder="Description"
+          formControlName="description"
+          type="text"
+        />
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      <button type="submit" mat-button>Save</button>
+      <button type="button" mat-button (click)="cancel.emit()">Cancel</button>
+    </mat-card-actions>
+  </form>
+</mat-card>
